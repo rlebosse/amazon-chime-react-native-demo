@@ -18,21 +18,21 @@ For more details about the SDK APIs, please refer to the **Getting Started** gui
 ### Android
 * Create a folder named `libs` under `android/app`
 * Download the Amazon Chime SDK binaries
-    - [amazon-chime-sdk-0.5.1.tar.gz](https://amazon-chime-sdk.s3.amazonaws.com/android/amazon-chime-sdk/0.5.1/amazon-chime-sdk-0.5.1.tar.gz)
-    - [amazon-chime-sdk-media-0.4.3.tar.gz](https://amazon-chime-sdk.s3.amazonaws.com/android/amazon-chime-sdk-media/0.4.3/amazon-chime-sdk-media-0.4.3.tar.gz)
+    - [amazon-chime-sdk-0.7.1.tar.gz](https://amazon-chime-sdk-android.s3.amazonaws.com/sdk/0.7.1/amazon-chime-sdk-0.7.1.tar.gz)
+    - [amazon-chime-sdk-media-0.6.1.tar.gz](https://amazon-chime-sdk-android.s3.amazonaws.com/media/0.6.1/amazon-chime-sdk-media-0.6.1.tar.gz)
 * Unzip, copy both `amazon-chime-sdk.aar` and `amazon-chime-sdk-media.aar` into the `android/app/libs` folder
 
 ### iOS
 * Download the Amazon Chime SDK binaries
-    - [AmazonChimeSDK-0.6.1.tar.gz](https://amazon-chime-sdk.s3.amazonaws.com/ios/amazon-chime-sdk-without-bitcode/0.6.1/AmazonChimeSDK-0.6.1.tar.gz)
-    - [AmazonChimeSDKMedia-0.4.3.tar.gz](https://amazon-chime-sdk.s3.amazonaws.com/ios/amazon-chime-sdk-media-without-bitcode/0.4.3/AmazonChimeSDKMedia-0.4.3.tar.gz)
+    - [AmazonChimeSDK-0.8.2.tar.gz](https://amazon-chime-sdk-ios.s3.amazonaws.com/sdk/0.8.2/AmazonChimeSDK-0.8.2.tar.gz)
+    - [AmazonChimeSDKMedia-0.6.1.tar.gz](https://amazon-chime-sdk-ios.s3.amazonaws.com/media/0.6.1/AmazonChimeSDKMedia-0.6.1.tar.gz)
 * Unzip, copy both `AmazonChimeSDK.framework` and `AmazonChimeSDKMedia.framework` into the `ios/RNDemo` folder
 
 ## 3. Deploy the serverless demo
 Follow the instructions in [amazon-chime-sdk-js](https://github.com/aws/amazon-chime-sdk-js/tree/master/demos/serverless) to deploy the serverless demo.
 
 ## 4. Update the server URLs
-Update `SERVER_URL` and `SERVER_REGION` in `src/Api.js` with the server URL and region of the serverless demo you created.
+Update `SERVER_URL` and `SERVER_REGION` in `src/utils/Api.js` with the server URL and region of the serverless demo you created.
 
 ## 5. Build and run
 Run `npm start` to start the React Native development server.
@@ -100,7 +100,7 @@ The following files are all under `android/app/src/main/java/com/amazonaws/servi
 * `NativeMobileSDKBridgePackage.kt`: Package definition to register the bridge in the Android application.
 * `MainApplication.java`: Because **React Native framework already generates this file for you**, you only need to add the following line in function `protected List<ReactPackage> getPackages()` to register the Native Module.
 ~~~kotlin
-packages.add(new ChimeReactNativeSDKDemoPackage());
+packages.add(new NativeMobileSDKBridgePackage());
 ~~~
 
 # More Examples in the Demo Application
